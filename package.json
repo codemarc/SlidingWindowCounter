@@ -1,0 +1,22 @@
+{
+  "name": "slidingwindowcounter",
+  "version": "1.0.0",
+  "description": "This is a counter which keeps track of the number of events have occurred in a given window of time.",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codemarc/slidingwindowcounter.git"
+  },
+  "author": "Marc J. Greenberg <codemarc@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codemarc/slidingwindowcounter/issues"
+  },
+  "homepage": "https://github.com/codemarc/slidingwindowcounter#readme",
+  "dependencies": {
+    "sliding-window-counter": "^0.2.4"
+  }
+}
