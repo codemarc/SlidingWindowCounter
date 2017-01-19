@@ -2,12 +2,31 @@
 This is a counter which keeps track of the number of events have occurred in a given window of time.
 An __event__ is a stateless record of occurrance at a given moment in time.
 
-We want to know how many events have occurred in the last:
-- second
-- minute
-- hour
+Sliding windows have a fixed known size.  We want to know how many events have 
+occurred in:  
+| Window      | Scope          | Size |
+| ----------- | -------------- | -----|
+| Last second | millisecond    | 1000 |
+| Last minute | second         | 60   |
+| Last hour   | minutes        | 60   |
 
 
+_This illustration is taken from eep-js_
+
+``` text
+Sliding window of size 2 ticks computing, counting occurances.
+
+     t0     t1      (emit)   t2             (emit)       tN
+   +---+  +---+---+          -...-...-
+   | 4 |  | 2 | 4 |   <6>    : x : x :
+   +---+  +---+---+          _...+---+---+               ...
+              | 2 |              | 2 | 1 |    <3>
+              +---+              +---+---+
+                                     | 2 |
+                                     +---+
+```
+Logically, we only ever need N active elements to emit a result for every 
+input event once all windows are open. 
 ## Usage - standard
 
 ``` js

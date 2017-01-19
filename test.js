@@ -2,11 +2,11 @@ var swc = require('./');
 
 // Report events every second...
 setInterval( () => { 
-  console.log({'Last': {
-      'Second':   swc.numLastSecond()
-    , 'Minute':   swc.numLastMinute()
-    , 'Hour':     swc.numLastHour()
-  }});
+  console.log({
+      'second':   swc.numLastSecond()
+    , 'minute':   swc.numLastMinute()
+    , 'hour':     swc.numLastHour()
+  });
 
 }, 1000);
 
