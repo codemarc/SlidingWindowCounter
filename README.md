@@ -4,11 +4,12 @@ An __event__ is a stateless record of occurrance at a given moment in time.
 
 Sliding windows have a fixed known size.  We want to know how many events have 
 occurred in:  
-| Window      | Scope          | Size |
-| ----------- | -------------- | -----|
-| Last second | millisecond    | 1000 |
-| Last minute | second         | 60   |
-| Last hour   | minutes        | 60   |
+
+Window      | Scope       | Size 
+------      | -----       | ---- 
+Last second | millisecond | 1000
+Last minute | second      | 60
+Last hour   | minutes     | 60
 
 
 _This illustration is taken from eep-js_
