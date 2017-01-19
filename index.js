@@ -2,6 +2,7 @@
 
 const counter = require('sliding-window-counter');
 
+
 /**
  *
  * @author Marc J. Greenberg <codemarc@gmail.com>
@@ -14,6 +15,10 @@ class SlidingWindowCounter {
 		this.cSec = counter(1000);
 		this.cMin = counter(60*1000);
 		this.cHour = counter(60*60*1000);
+
+		this.lSec = 0;
+		this.lMin = 0;
+		this.lHour = 0;
 	}
 
 	/**
@@ -26,7 +31,13 @@ class SlidingWindowCounter {
 		this.cSec(1);
 		this.cMin(1);
 		this.cHour(1);
+
+		this.lSec = this.cSec();
+		this.lMin = this.cMin();
+		this.lHour = this.cHour();
 	}
+
+
 
 	/**
 	 * Returns number of events in the last second
@@ -35,7 +46,7 @@ class SlidingWindowCounter {
 	 * @returns {number}
 	 */
 	numLastSecond() {
-		return this.cSec();
+		return this.lSec;
 	}
 
 	/**
@@ -45,7 +56,7 @@ class SlidingWindowCounter {
 	 * @returns {number}
 	 */
 	numLastMinute() {
-		return this.cMin();
+		return this.lMin;
 	}
 
 	/**
@@ -55,7 +66,7 @@ class SlidingWindowCounter {
 	 * @returns {number}
 	 */
 	numLastHour() {
-		return this.cHour();
+		return this.lHour;
 	}
 }
 

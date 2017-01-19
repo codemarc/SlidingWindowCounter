@@ -48,3 +48,29 @@ setInterval( () => {
 }, Math.floor(Math.random() * 1000));
 
 ```
+
+# Test 
+To test this code you need a recent version of node installed.
+
+``` code
+bash-3.2$ npm run test
+```
+
+Alternatively you of you have docker installed you can:
+``` code
+# build it
+bash-3.2$ docker build -t codemarc/slidewin .
+Successfully built a34d58741232
+
+# or pull it
+bash-3.2$ docker pull codemarc/slidewin:latest
+Status: Image is up to date for codemarc/slidewin:latest
+
+# and run it in a container
+bash-3.2$ docker run -it --rm codemarc/slidewin
+{ second: 3, minute: 3, hour: 3 }
+{ second: 7, minute: 7, hour: 7 }
+.
+.
+.
+```
