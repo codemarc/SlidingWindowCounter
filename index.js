@@ -1,3 +1,5 @@
+'use strict'
+
 const counter = require('sliding-window-counter');
 
 /**

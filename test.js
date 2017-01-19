@@ -1,4 +1,11 @@
+'use strict';
+
 var swc = require('./');
+
+// Add event occurrances at a random interval 0 - 1000
+setInterval( () => { 
+  swc.increment();
+}, Math.floor(Math.random() * 1000));
 
 // Report events every second...
 setInterval( () => { 
@@ -10,7 +17,3 @@ setInterval( () => {
 
 }, 1000);
 
-// Add event occurrances at a random interval 0 - 1000
-setInterval( () => { 
-  swc.increment();
-}, Math.floor(Math.random() * 1000));
